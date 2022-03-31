@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Kalkulator</title>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+
+</head>
+<body>
+    <div class="background"></div>
+    <div class="container">
+        <h2>Kalkulator</h2>
+        <form action="" name="cal"> 
+       <textarea name="field" id="" cols="30" rows="10" placeholder="0"></textarea>
+    </form>
+    <table>
+        <tr>
+            <td><input class="button" type="button" value="AC" onclick="clean()"></td>
+            <td><input class="button" type="button" value="Del" onclick="back()"></td>
+            <td><input class="button" type="button" value="%" onclick="insert('%')"></td>
+            <td><input class="button" type="button" value="/" onclick="insert('/')"></td>
+        </tr>
+
+        <tr>
+            <td><input class="button" type="button" value="7" onclick="insert(7)"></td>
+            <td><input class="button" type="button" value="8" onclick="insert(8)"></td>
+            <td><input class="button" type="button" value="9" onclick="insert(9)"></td>
+            <td><input class="button" type="button" value="*" onclick="insert('*')"></td>
+        </tr>
+
+        <tr>
+            <td><input class="button" type="button" value="4" onclick="insert(4)"></td>
+            <td><input class="button" type="button" value="5" onclick="insert(5)"></td>
+            <td><input class="button" type="button" value="6" onclick="insert(6)"></td>
+            <td><input class="button" type="button" value="-" onclick="insert('-')"></td>
+        </tr>
+
+        <tr>
+            <td><input class="button" type="button" value="1" onclick="insert(1)"></td>
+            <td><input class="button" type="button" value="2" onclick="insert(2)"></td>
+            <td><input class="button" type="button" value="3" onclick="insert(3)"></td>
+            <td><input class="button" type="button" value="=" onclick="equal()"></td>
+        </tr>
+
+        <tr>
+            <td><input class="button" type="button" value="." onclick="insert('.')"></td>
+            <td><input class="button" type="button" value="0" onclick="insert(0)"></td>
+            <td><input class="button" type="button" value="+" onclick="insert('+')"></td>
+        </tr>
+
+    </table>
+
+    </div>
+
+        <script>
+
+            function insert(num){
+                cal.field.value = cal.field.value + num
+            }
+
+            function equal(){
+                cal.field.value = eval(cal.field.value)
+            }
+
+            function back(){
+                cal.field.value = cal.field.value.substring(0, cal.field.value.length - 1)
+            }
+
+            function clean(){
+                cal.field.value = ""
+            }
+        </script>
+</body>
+
+<style>
+       * {
+        padding: 0;
+        margin: 0;
+        font-family: sans-serif;
+    }
+
+body {
+	
+	background: white;
+	height: 637px;
+}
+
+table {
+    position: center;
+    width: fixed;
+}
+
+.container h2 {
+    color: #1572A1; 
+    text-align: left;
+    margin: 10px;
+    padding: 5px;
+}
+
+.button {
+	width: 50px;
+	height: 50px;
+	font-size: 17px;
+	margin: 3px;
+	cursor: pointer;
+	border: none;
+	background: #F76E11;
+	color: white;
+	border-radius: 15px;
+	
+}
+
+
+textarea {
+	width: 204px;
+	margin: 4px; 
+	font-size: 20px;
+	padding: 10px;
+	/* border: 50px; */
+	color: #398AB9;
+	border-radius: 25px;
+	text-align: left;
+}
+</style>
+</html>
